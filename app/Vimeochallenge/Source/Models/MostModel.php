@@ -1,7 +1,4 @@
-<?php
-
-require_once '../source/lib/BaseTemplate.php';
-require_once '../source/lib/Database.php';
+<?php namespace Vimeochallenge\Source;
 
 /**
  * MostModel will return Top 5 Watched Videos information information from the DB 

@@ -20,8 +20,8 @@
  * This will allow quicker access to totals should there be larger DB files.
  * A simple error log will be created in the directory.
  */
-require 'configure.php';
-define('DUMPFILE',__DIR__.'/data.dump');//<<<<change if data is in another directory
+require('configure.php');
+define('DUMPFILE',__DIR__.'\data.dump');//<<<<change if data is in another directory
 define('LINEBREAK',PHP_EOL.'-----------------------------------------------'.PHP_EOL);
 
 $db = new class{
@@ -289,7 +289,7 @@ $db = new class{
 						"DROP TABLE IF EXISTS users;".
 						"CREATE TABLE users (".
 						"user_id int(11) unsigned NOT NULL AUTO_INCREMENT,".
-						"created datetime DEFAULT NULL,".
+						"created datetime DEFAULT '0000-00-00 00:00:00',".
 						"country_id smallint(3) unsigned DEFAULT '0',".
 						"ip_address varchar(15) DEFAULT '000.000.000.000',".
 						"total_liked int(10) unsigned DEFAULT '0',".
@@ -301,7 +301,7 @@ $db = new class{
 						"DROP TABLE IF EXISTS videos;".
 						"CREATE TABLE videos (".
 						"video_id int(10) unsigned NOT NULL AUTO_INCREMENT,".
-						"upload_date datetime DEFAULT NULL,".
+						"upload_date datetime DEFAULT '0000-00-00 00:00:00',".
 						"user_id int(10) unsigned DEFAULT '0',".
 						"likes mediumint(8) unsigned DEFAULT '0',".
 						"watched mediumint(8) unsigned DEFAULT '0',".
@@ -314,7 +314,7 @@ $db = new class{
 						"vll_id int(10) unsigned NOT NULL AUTO_INCREMENT,".
 						"video_id int(10) unsigned DEFAULT '0',".
 						"user_id int(10) unsigned DEFAULT '0',".
-						"like_date datetime DEFAULT NULL,".
+						"like_date datetime DEFAULT '0000-00-00 00:00:00',".
 						"PRIMARY KEY (vll_id),".
 						"KEY vll_vid_idx (video_id),".
 						"KEY vll_uid_idx (user_id)".
@@ -324,7 +324,7 @@ $db = new class{
 						"vwl_id int(10) unsigned NOT NULL AUTO_INCREMENT,".
 						"video_id int(10) unsigned DEFAULT '0',".
 						"user_id int(10) unsigned DEFAULT '0',".
-						"watch_date datetime DEFAULT NULL,".
+						"watch_date datetime DEFAULT '0000-00-00 00:00:00',".
 						"PRIMARY KEY (vwl_id),".
 						"KEY vwl_vid_idx (video_id),".
 						"KEY vwl_uid_idx (user_id)".

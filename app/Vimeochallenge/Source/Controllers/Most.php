@@ -1,11 +1,8 @@
-<?php
+<?php namespace Vimeochallenge\Source;
 
 /**
  * User Class Controller that will get data from the User Model with corresponding REQUEST METHOD
  */
-require_once '../source/lib/BaseTemplate.php';
-require_once '../source/lib/BaseController.php';
-require_once 'models/MostModel.php';
 
 class Most extends BaseTemplate implements BaseController
 {

@@ -1,13 +1,10 @@
-<?php
+<?php namespace Vimeochallenge\Source;
 
 /**
  * User Class Controller that will get data from the User Model with corresponding REQUEST METHOD
  */
-require_once '../source/lib/BaseTemplate.php';
-require_once '../source/lib/BaseController.php';
-require 'models/UserModel.php';
 
-class User extends BaseTemplate implements BaseController
+class User extends \Vimeochallenge\Source\BaseTemplate implements \Vimeochallenge\Source\BaseController
 {
 	final public function getData($params){
 

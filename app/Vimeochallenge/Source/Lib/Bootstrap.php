@@ -1,8 +1,9 @@
-<?php
+<?php namespace Vimeochallenge\Source;
 
 /**
  * This will initiate the relevant controllers for the API and Captures all Request Methods
  */
+
 class Bootstrap
 {
 	
@@ -26,11 +27,14 @@ class Bootstrap
 		 * just listing all available controllers/classes for this api.
 		 * an error will be returned if it does not exist
 		 */
-		$file = 'controllers/'.$params[0].'.php';
+		$file = dirname(__FILE__).'/../Controllers/'.ucwords($params[0]).'.php';
+		echo $file;
 		if (file_exists($file)){
 
-			require $file;
-			$controller = new $params[0];
+			//require $file;
+			//Vimeochallenge\Source\Controllers\.
+			$className = 'Vimeochallenge\\Source\\'.ucwords($params[0]);
+			$controller = new $className;
 
 			//set the proper class method to be used based on the REQUEST_METHOD
 			switch($_RM){
@@ -70,7 +74,7 @@ class Bootstrap
 			$response = $controller->getResponse();
 
 		} else {
-			$response = ['status'=>false,'reason'=>'Invalid Request'];
+			$response = ['status'=>false,'reason'=>'Invalid Request a'];
 		}
 
 		/**

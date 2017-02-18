@@ -1,4 +1,5 @@
-<?php
+<?php namespace Vimeochallenge\Source;
+
 /**
  * Setting required methods for all Controllers
  */

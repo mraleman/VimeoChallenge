@@ -1,7 +1,4 @@
-<?php
-
-require_once '../source/lib/BaseTemplate.php';
-require_once '../source/lib/Database.php';
+<?php namespace Vimeochallenge\Source;
 
 /**
  * UserModel will return relevant USER information from the DB

@@ -1,11 +1,4 @@
-<?php
-
-/**
- * User Class Controller that will get data from the User Model with corresponding REQUEST METHOD
- */
-require_once '../source/lib/BaseTemplate.php';
-require_once '../source/lib/BaseController.php';
-require_once 'models/CountryModel.php';
+<?php namespace Vimeochallenge\Source;
 
 class Country extends BaseTemplate implements BaseController
 {

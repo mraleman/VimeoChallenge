@@ -1,7 +1,4 @@
-<?php
-
-require_once '../source/lib/BaseTemplate.php';
-require_once '../source/lib/Database.php';
+<?php namespace Vimeochallenge\Source;
 
 /**
  * VideoModel will return relevant VIDEO information from the DB

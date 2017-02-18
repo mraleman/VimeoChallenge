@@ -1,12 +1,8 @@
-<?php
-ini_set('display_errors', 1);
-error_reporting(E_ALL & ~E_DEPRECATED & ~E_STRICT);//used for debugging
+<?php namespace Vimeochallenge\Source;
+
 /**
  * User Class Controller that will get data from the User Model with corresponding REQUEST METHOD
  */
-require_once '../source/lib/BaseTemplate.php';
-require_once '../source/lib/BaseController.php';
-require_once 'models/VideoModel.php';
 
 class Video extends BaseTemplate implements BaseController
 {

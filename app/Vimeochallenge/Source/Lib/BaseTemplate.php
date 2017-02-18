@@ -1,9 +1,11 @@
-<?php
+<?php namespace Vimeochallenge\Source;
 
 /**
 * Base Template used by all Controllers and Models.
 * Sets URL Constant from this single-point, required parameters and methods
 */
+use \PDO;
+
 abstract class BaseTemplate
 {
 	
