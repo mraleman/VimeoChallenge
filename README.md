@@ -1,4 +1,4 @@
-# VimeoChallenge RESTful API (BETA)
+# VimeoChallenge RESTful API v0.9 (BETA)
 
 Still required code cleaning and PSR.
 Will be adding autoload and namespaces in next versions.
