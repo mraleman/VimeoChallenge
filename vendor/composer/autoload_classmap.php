@@ -12,6 +12,7 @@ return array(
     'Vimeochallenge\\Source\\Country' => $baseDir . '/app/Vimeochallenge/Source/Controllers/Country.php',
     'Vimeochallenge\\Source\\CountryModel' => $baseDir . '/app/Vimeochallenge/Source/Models/CountryModel.php',
     'Vimeochallenge\\Source\\Database' => $baseDir . '/app/Vimeochallenge/Source/Lib/Database.php',
+    'Vimeochallenge\\Source\\Dump' => $baseDir . '/app/Vimeochallenge/Source/Lib/Dump.php',
     'Vimeochallenge\\Source\\Most' => $baseDir . '/app/Vimeochallenge/Source/Controllers/Most.php',
     'Vimeochallenge\\Source\\MostModel' => $baseDir . '/app/Vimeochallenge/Source/Models/MostModel.php',
     'Vimeochallenge\\Source\\User' => $baseDir . '/app/Vimeochallenge/Source/Controllers/User.php',

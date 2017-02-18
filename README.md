@@ -1,4 +1,5 @@
-# VimeoChallenge RESTful API v0.9 (BETA)
+# VimeoChallenge RESTful API v0.9
+-Added Composer ps-4 Autoload
 
 Still required code cleaning and PSR.
 Will be adding autoload and namespaces in next versions.
@@ -26,9 +27,10 @@ UBUNTU INSTRUCTIONS
 - Modify config.php file with your DB settings
 
 **Run Data Dumper**
-- Run dump.php
-- php /var/www/html/dump.php
-- This will take provided dump file and read each line.  It will add each record to the corresponding DB table and also calculate grab the totals 
+- Run dump.php that is locatted inside the DUMPER directory
+- php /var/www/html/dumper/dump.php
+- This will take provided dump file and read each line.  It will add each record to it's corresponding DB table.
+Country table will be also be created as well as the totals will be tallied at the end.
 
 **Enable Mod Rewrite**
 - sudo a2enmod rewrite

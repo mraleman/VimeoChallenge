@@ -31,6 +31,7 @@ class ComposerStaticInit7132e32d86b5b865172f772439747491
         'Vimeochallenge\\Source\\Country' => __DIR__ . '/../..' . '/app/Vimeochallenge/Source/Controllers/Country.php',
         'Vimeochallenge\\Source\\CountryModel' => __DIR__ . '/../..' . '/app/Vimeochallenge/Source/Models/CountryModel.php',
         'Vimeochallenge\\Source\\Database' => __DIR__ . '/../..' . '/app/Vimeochallenge/Source/Lib/Database.php',
+        'Vimeochallenge\\Source\\Dump' => __DIR__ . '/../..' . '/app/Vimeochallenge/Source/Lib/Dump.php',
         'Vimeochallenge\\Source\\Most' => __DIR__ . '/../..' . '/app/Vimeochallenge/Source/Controllers/Most.php',
         'Vimeochallenge\\Source\\MostModel' => __DIR__ . '/../..' . '/app/Vimeochallenge/Source/Models/MostModel.php',
         'Vimeochallenge\\Source\\User' => __DIR__ . '/../..' . '/app/Vimeochallenge/Source/Controllers/User.php',

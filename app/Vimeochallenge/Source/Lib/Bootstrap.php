@@ -27,8 +27,11 @@ class Bootstrap
 		 * just listing all available controllers/classes for this api.
 		 * an error will be returned if it does not exist
 		 */
-		$file = dirname(__FILE__).'/../Controllers/'.ucwords($params[0]).'.php';
-		echo $file;
+
+ 		$controller_path = realpath(__DIR__ . DIRECTORY_SEPARATOR . '..').DIRECTORY_SEPARATOR.'Controllers'.DIRECTORY_SEPARATOR;
+		
+		$file = $controller_path.ucwords($params[0]).'.php';;
+
 		if (file_exists($file)){
 
 			//require $file;

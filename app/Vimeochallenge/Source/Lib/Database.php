@@ -1,8 +1,8 @@
 <?php namespace Vimeochallenge\Source;
 
 /**
-* Establishes connection to our MySQL Database.
-*/
+ * Establishes connection to our MySQL Database.
+ */
 use \PDO;
 
 class Database
