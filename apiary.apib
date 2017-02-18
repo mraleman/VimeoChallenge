@@ -1,0 +1,714 @@
+FORMAT: 1A
+HOST: http://52.39.160.239/api/ 
+
+# Vimeo Challenge RESTful API
+
+This API allows the client to get some data from a database with approximately 1,000,000 records. The API offer endpoints for USERS, VIDEOS, COUNTRY and POPULAR.  
+**Please Note:** This API is inclomplete. Some endpoints do not exist but were not required as part of the challenge.  
+
+**Authorization Type:** `NO AUTH`  
+**HEADERS SET:** `Content-Type application/json`
+
+## User - Create New User [/user]
+Simple User Api that provides several
+
+### Create User[POST]
+Creates new User.  
+**Method:** `POST`
+**Endpoint:** `/USER`
+**Request Required Parameters:**  
+- `country` - (string) - Country Code  
+- `ipaddress` - (string) - ip4 Address  
+
+**Response:**  
+`201` `USER/{user_id}` 
+
++ Request (application/json)
+
+        {
+            "country": "CA",
+            "ipaddress": "255.255.255.255"
+        }
+
++ Response 201 (application/json)
+
+        {
+            "status": true,
+            "data": {
+                "userId": 10001,
+                "country": {
+                    "code": "US",
+                    "href": "/country/US"
+                },
+                "uploads": {
+                    "total": "0",
+                    "href": "/user/10047/uploads"
+                },
+                "watched": {
+                    "total": "0",
+                    "href": "/user/10047/watched"
+                },
+                "liked": {
+                    "total": "0",
+                    "href": "/user/10047/liked"
+                }
+            }
+        }
+
+## User - Various Methods [/user/{user_id}]
+Several methods for the User.
+
+### Get User Profile[GET]
+Get the User's Profile.  
+**Method:** `GET`  
+**Endpoint:** `/USER/{user_id}`  
+**Request Parameters:** `None`  
+**Response:** `USER` (object)
+
++ Response 200 (application/json)
+
+        {
+            "status": true,
+            "data": {
+                "userId": "18",
+                "country": {
+                    "code": "MN",
+                    "href": "/country/MN"
+                },
+                "uploads": {
+                    "total": "64",
+                    "href": "/user/18/uploads"
+                },
+                "watched": {
+                    "total": "319",
+                    "href": "/user/18/watched"
+                },
+                "liked": {
+                    "total": "207",
+                    "href": "/user/18/liked"
+                }
+            }
+        }
+
+### Delete User[DELETE]
+Deletes a user.  
+**Method:** `DELETE`
+**Endpoint:** `/USER/{user_id}`
+**Required Parameters:** `None`  
+**Response:** `404`
+
++ Response 404 (application/json)
+
+### Patch User[PATCH]
+Updates specific user settings.
+**Method:** `GET`  
+**Endpoint:** `/USER/{user_id}`  
+**Optional Parameters:**  
+- `addlike` - (bool) - Adds/Removes 1 *Like* from Total
+- `addupload` - (bool) - Adds/Removes 1 *Upload* from Total
+- `addwatch` - (bool) - Adds/Removes 1 *Watch* from Total
+
++ Request (application/json)
+
+        {
+            "addlike":true,
+            "addUpload":true,
+            "addWatch":true
+        }
++ Response 200 (application/json)
+
+        {
+            "status": true,
+            "data": {
+                "userId": "18",
+                "country": {
+                    "code": "MN",
+                    "href": "/country/MN"
+                },
+                "uploads": {
+                    "total": "65",
+                    "href": "/user/18/uploads"
+                },
+                "watched": {
+                    "total": "319",
+                    "href": "/user/18/watched"
+                },
+                "liked": {
+                    "total": "208",
+                    "href": "/user/18/liked"
+                }
+            }
+        }
+
+## User - Videos Uploaded [/user/{user_id}/uploads]
+List the User's Uploads.
+
+### Get User Uploads[GET]
+Get the User's Uploads.  Default *Limit* set to 20
+**Method:** `GET`  
+**Endpoint:** `/USER/{user_id}/UPLOADS`  
+**Request Parameters:** `None`  
+**Response:** `USER Uploads` (object)
+
++ Response 200 (application/json)
+
+        {
+            "status": true,
+            "data": {
+                "userId": "18",
+                "total": "65",
+                "limit": 20,
+                "result": [
+                    {
+                        "videoId": "1612",
+                        "uploadDate": "2015-08-10T09:21:04+0000",
+                        "watchTotal": "0",
+                        "likeTotal": "0",
+                        "href": "/video/1612"
+                    },
+                    {
+                        "videoId": "16374",
+                        "uploadDate": "2015-08-03T19:51:31+0000",
+                        "watchTotal": "0",
+                        "likeTotal": "0",
+                        "href": "/video/16374"
+                    },
+                    {
+                        "videoId": "18794",
+                        "uploadDate": "2015-08-04T17:15:11+0000",
+                        "watchTotal": "0",
+                        "likeTotal": "0",
+                        "href": "/video/18794"
+                    },
+                    {
+                        "videoId": "29939",
+                        "uploadDate": "2015-08-04T06:27:34+0000",
+                        "watchTotal": "0",
+                        "likeTotal": "0",
+                        "href": "/video/29939"
+                    },
+                    {
+                        "videoId": "70913",
+                        "uploadDate": "2015-08-07T15:57:30+0000",
+                        "watchTotal": "0",
+                        "likeTotal": "0",
+                        "href": "/video/70913"
+                    },
+                    {
+                        "videoId": "74870",
+                        "uploadDate": "2015-08-04T08:50:01+0000",
+                        "watchTotal": "0",
+                        "likeTotal": "0",
+                        "href": "/video/74870"
+                    },
+                    {
+                        "videoId": "94804",
+                        "uploadDate": "2015-08-04T07:35:37+0000",
+                        "watchTotal": "0",
+                        "likeTotal": "0",
+                        "href": "/video/94804"
+                    },
+                    {
+                        "videoId": "127069",
+                        "uploadDate": "2015-08-08T16:28:20+0000",
+                        "watchTotal": "0",
+                        "likeTotal": "0",
+                        "href": "/video/127069"
+                    },
+                    {
+                        "videoId": "162338",
+                        "uploadDate": "2015-08-10T09:05:29+0000",
+                        "watchTotal": "0",
+                        "likeTotal": "0",
+                        "href": "/video/162338"
+                    },
+                    {
+                        "videoId": "169168",
+                        "uploadDate": "2015-08-08T00:11:33+0000",
+                        "watchTotal": "0",
+                        "likeTotal": "0",
+                        "href": "/video/169168"
+                    },
+                    {
+                        "videoId": "171443",
+                        "uploadDate": "2015-08-07T21:45:22+0000",
+                        "watchTotal": "0",
+                        "likeTotal": "0",
+                        "href": "/video/171443"
+                    },
+                    {
+                        "videoId": "201978",
+                        "uploadDate": "2015-08-05T22:32:57+0000",
+                        "watchTotal": "0",
+                        "likeTotal": "0",
+                        "href": "/video/201978"
+                    },
+                    {
+                        "videoId": "224988",
+                        "uploadDate": "2015-08-07T03:16:04+0000",
+                        "watchTotal": "0",
+                        "likeTotal": "0",
+                        "href": "/video/224988"
+                    },
+                    {
+                        "videoId": "228917",
+                        "uploadDate": "2015-08-03T23:50:51+0000",
+                        "watchTotal": "0",
+                        "likeTotal": "0",
+                        "href": "/video/228917"
+                    },
+                    {
+                        "videoId": "243075",
+                        "uploadDate": "2015-08-10T18:16:11+0000",
+                        "watchTotal": "0",
+                        "likeTotal": "0",
+                        "href": "/video/243075"
+                    },
+                    {
+                        "videoId": "279415",
+                        "uploadDate": "2015-08-11T06:28:40+0000",
+                        "watchTotal": "0",
+                        "likeTotal": "0",
+                        "href": "/video/279415"
+                    },
+                    {
+                        "videoId": "314779",
+                        "uploadDate": "2015-08-07T10:35:16+0000",
+                        "watchTotal": "0",
+                        "likeTotal": "0",
+                        "href": "/video/314779"
+                    },
+                    {
+                        "videoId": "333178",
+                        "uploadDate": "2015-08-04T12:32:07+0000",
+                        "watchTotal": "0",
+                        "likeTotal": "0",
+                        "href": "/video/333178"
+                    },
+                    {
+                        "videoId": "359082",
+                        "uploadDate": "2015-08-12T00:44:43+0000",
+                        "watchTotal": "0",
+                        "likeTotal": "0",
+                        "href": "/video/359082"
+                    },
+                    {
+                        "videoId": "395321",
+                        "uploadDate": "2015-08-09T09:50:24+0000",
+                        "watchTotal": "0",
+                        "likeTotal": "0",
+                        "href": "/video/395321"
+                    }
+                ],
+                "links": {
+                    "prevPage": "/user/18/uploads/page/1",
+                    "self": "/user/18/uploads/page/2",
+                    "nextPage": "/user/18/uploads/page/3"
+                }
+            }
+        }
+        
+## User - Videos Watched [/user/{user_id}/watched]
+
+### Get User Watched[GET]
+Get the User's Uploads.  Default *Limit* set to 20
+**Method:** `GET`  
+**Endpoint:** `/USER/{user_id}/WATCHED`  
+**Request Parameters:** `None`  
+**Response:** `USER Watched` (object)
+
++ Response 200 (application/json)
+
+        {
+            "status": true,
+            "data": {
+                "userId": "18",
+                "total": "319",
+                "limit": 20,
+                "result": [
+                    {
+                        "videoId": "666927",
+                        "watchedDate": "2015-08-12T02:24:19+0000",
+                        "liked": false,
+                        "likedDate": "",
+                        "href": "/video/666927"
+                    },
+                    {
+                        "videoId": "391262",
+                        "watchedDate": "2015-08-12T02:23:43+0000",
+                        "liked": false,
+                        "likedDate": "",
+                        "href": "/video/391262"
+                    },
+                    {
+                        "videoId": "18536",
+                        "watchedDate": "2015-08-12T02:14:16+0000",
+                        "liked": false,
+                        "likedDate": "",
+                        "href": "/video/18536"
+                    },
+                    {
+                        "videoId": "221480",
+                        "watchedDate": "2015-08-12T02:07:02+0000",
+                        "liked": false,
+                        "likedDate": "",
+                        "href": "/video/221480"
+                    },
+                    {
+                        "videoId": "969908",
+                        "watchedDate": "2015-08-12T01:55:23+0000",
+                        "liked": false,
+                        "likedDate": "",
+                        "href": "/video/969908"
+                    },
+                    {
+                        "videoId": "272663",
+                        "watchedDate": "2015-08-12T01:49:24+0000",
+                        "liked": false,
+                        "likedDate": "",
+                        "href": "/video/272663"
+                    },
+                    {
+                        "videoId": "780492",
+                        "watchedDate": "2015-08-12T01:16:09+0000",
+                        "liked": false,
+                        "likedDate": "",
+                        "href": "/video/780492"
+                    },
+                    {
+                        "videoId": "896420",
+                        "watchedDate": "2015-08-12T01:12:39+0000",
+                        "liked": false,
+                        "likedDate": "",
+                        "href": "/video/896420"
+                    },
+                    {
+                        "videoId": "133918",
+                        "watchedDate": "2015-08-12T00:54:05+0000",
+                        "liked": false,
+                        "likedDate": "",
+                        "href": "/video/133918"
+                    },
+                    {
+                        "videoId": "163456",
+                        "watchedDate": "2015-08-12T00:36:17+0000",
+                        "liked": false,
+                        "likedDate": "",
+                        "href": "/video/163456"
+                    },
+                    {
+                        "videoId": "292757",
+                        "watchedDate": "2015-08-12T00:12:17+0000",
+                        "liked": false,
+                        "likedDate": "",
+                        "href": "/video/292757"
+                    },
+                    {
+                        "videoId": "916347",
+                        "watchedDate": "2015-08-12T00:07:21+0000",
+                        "liked": false,
+                        "likedDate": "",
+                        "href": "/video/916347"
+                    },
+                    {
+                        "videoId": "999335",
+                        "watchedDate": "2015-08-11T23:48:44+0000",
+                        "liked": false,
+                        "likedDate": "",
+                        "href": "/video/999335"
+                    },
+                    {
+                        "videoId": "958274",
+                        "watchedDate": "2015-08-11T23:36:13+0000",
+                        "liked": false,
+                        "likedDate": "",
+                        "href": "/video/958274"
+                    },
+                    {
+                        "videoId": "485884",
+                        "watchedDate": "2015-08-11T22:13:14+0000",
+                        "liked": false,
+                        "likedDate": "",
+                        "href": "/video/485884"
+                    },
+                    {
+                        "videoId": "835279",
+                        "watchedDate": "2015-08-11T20:34:05+0000",
+                        "liked": false,
+                        "likedDate": "",
+                        "href": "/video/835279"
+                    },
+                    {
+                        "videoId": "997980",
+                        "watchedDate": "2015-08-11T19:42:07+0000",
+                        "liked": false,
+                        "likedDate": "",
+                        "href": "/video/997980"
+                    },
+                    {
+                        "videoId": "472027",
+                        "watchedDate": "2015-08-11T18:49:04+0000",
+                        "liked": false,
+                        "likedDate": "",
+                        "href": "/video/472027"
+                    },
+                    {
+                        "videoId": "687545",
+                        "watchedDate": "2015-08-11T18:33:24+0000",
+                        "liked": false,
+                        "likedDate": "",
+                        "href": "/video/687545"
+                    },
+                    {
+                        "videoId": "435963",
+                        "watchedDate": "2015-08-11T17:29:42+0000",
+                        "liked": false,
+                        "likedDate": "",
+                        "href": "/video/435963"
+                    }
+                ],
+                "links": {
+                  "prevPage": "/user/18/watched/page/1",
+                  "self": "/user/18/watched/page/2",
+                  "nextPage": "/user/18/watched/page/3"
+                }
+            }
+        }
+
+
+## User - Videos Liked [/user/{user_id}/liked]
+
+### Get User Liked[GET]
+Get the User's Uploads.  Default *Limit* set to 20
+**Method:** `GET`  
+**Endpoint:** `/USER/{user_id}/LIKED`  
+**Request Parameters:** `None`  
+**Response:** `USER Liked` (object)
+
++ Response 200 (application/json)
+
+        {
+            "status": true,
+            "data": {
+                "userId": "18",
+                "total": "208",
+                "limit": 20,
+                "result": [
+                    {
+                        "videoId": "490278",
+                        "likedDate": "2015-08-12T02:25:04+0000",
+                        "href": "/video/490278"
+                    },
+                    {
+                        "videoId": "120269",
+                        "likedDate": "2015-08-12T01:00:30+0000",
+                        "href": "/video/120269"
+                    },
+                    {
+                        "videoId": "124849",
+                        "likedDate": "2015-08-12T00:28:48+0000",
+                        "href": "/video/124849"
+                    },
+                    {
+                        "videoId": "542664",
+                        "likedDate": "2015-08-11T22:15:05+0000",
+                        "href": "/video/542664"
+                    },
+                    {
+                        "videoId": "945577",
+                        "likedDate": "2015-08-11T22:06:23+0000",
+                        "href": "/video/945577"
+                    },
+                    {
+                        "videoId": "725460",
+                        "likedDate": "2015-08-11T20:05:09+0000",
+                        "href": "/video/725460"
+                    },
+                    {
+                        "videoId": "196351",
+                        "likedDate": "2015-08-11T19:40:44+0000",
+                        "href": "/video/196351"
+                    },
+                    {
+                        "videoId": "135815",
+                        "likedDate": "2015-08-11T19:24:17+0000",
+                        "href": "/video/135815"
+                    },
+                    {
+                        "videoId": "56396",
+                        "likedDate": "2015-08-11T19:21:50+0000",
+                        "href": "/video/56396"
+                    },
+                    {
+                        "videoId": "57378",
+                        "likedDate": "2015-08-11T17:41:19+0000",
+                        "href": "/video/57378"
+                    },
+                    {
+                        "videoId": "206355",
+                        "likedDate": "2015-08-11T17:19:12+0000",
+                        "href": "/video/206355"
+                    },
+                    {
+                        "videoId": "532778",
+                        "likedDate": "2015-08-11T16:56:42+0000",
+                        "href": "/video/532778"
+                    },
+                    {
+                        "videoId": "675543",
+                        "likedDate": "2015-08-11T16:55:44+0000",
+                        "href": "/video/675543"
+                    },
+                    {
+                        "videoId": "131050",
+                        "likedDate": "2015-08-11T16:24:15+0000",
+                        "href": "/video/131050"
+                    },
+                    {
+                        "videoId": "892620",
+                        "likedDate": "2015-08-11T15:48:57+0000",
+                        "href": "/video/892620"
+                    },
+                    {
+                        "videoId": "622480",
+                        "likedDate": "2015-08-11T13:54:00+0000",
+                        "href": "/video/622480"
+                    },
+                    {
+                        "videoId": "384412",
+                        "likedDate": "2015-08-11T13:06:53+0000",
+                        "href": "/video/384412"
+                    },
+                    {
+                        "videoId": "534321",
+                        "likedDate": "2015-08-11T11:55:01+0000",
+                        "href": "/video/534321"
+                    },
+                    {
+                        "videoId": "406071",
+                        "likedDate": "2015-08-11T11:22:52+0000",
+                        "href": "/video/406071"
+                    },
+                    {
+                        "videoId": "495455",
+                        "likedDate": "2015-08-11T09:56:35+0000",
+                        "href": "/video/495455"
+                    }
+                ],
+                "links": {
+                    "prevPage": "/user/18/liked/page/1",
+                    "self": "/user/18/liked/page/2",
+                    "nextPage": "/user/18/liked/page/3"
+                }
+            }
+        }
+        
+## Country - List Users of Country [/country/{country_code}/users]
+
+### Get User Liked[GET]
+Gets a list of users from the country.  Default *Limit* set to 20
+**Method:** `GET`  
+**Endpoint:** `/COUNTRY/{country_code}/USERS`  
+**Request Parameters:** `None`  
+
++ Response 200 (application/json)
+
+## Video - Total Users by Country [/video/{video_id}/countries]
+
+### Get User Liked[GET]
+Get the total of users who watched the video by country.  Default *Limit* set to 20
+**Method:** `GET`  
+**Endpoint:** `/VIDEO/{video_id}/COUNTRIES`  
+**Request Parameters:** `None`  
+
++ Response 200 (application/json)
+
+        {
+            "status": true,
+            "data": {
+                "videoId": "919423",
+                "limit": 20,
+                "result": [
+                    {
+                        "countryCode": "BG",
+                        "watchedTotal": "1",
+                        "href": "/country/BG"
+                    },
+                    {
+                        "countryCode": "CO",
+                        "watchedTotal": "1",
+                        "href": "/country/CO"
+                    },
+                    {
+                        "countryCode": "IM",
+                        "watchedTotal": "1",
+                        "href": "/country/IM"
+                    },
+                    {
+                        "countryCode": "ME",
+                        "watchedTotal": "1",
+                        "href": "/country/ME"
+                    },
+                    {
+                        "countryCode": "RS",
+                        "watchedTotal": "1",
+                        "href": "/country/RS"
+                    },
+                    {
+                        "countryCode": "ZA",
+                        "watchedTotal": "1",
+                        "href": "/country/ZA"
+                    },
+                    {
+                        "countryCode": "ZW",
+                        "watchedTotal": "1",
+                        "href": "/country/ZW"
+                    }
+                ],
+                "prevPage": "/video/919423/countries/page/1",
+                "nextPage": "/video/919423/countries/page/3"
+            }
+        }
+
+## TOP 5 - Watched Videos [/most/watched]
+
+### Get User Liked[GET]
+Get the User's Uploads.  Default *Limit* set to 20
+**Method:** `GET`  
+**Endpoint:** `/MOST/WATCHED`  
+**Request Parameters:** `None`  
+
++ Response 200 (application/json)
+
+        {
+            "status": true,
+            "data": {
+                "result": [
+                    {
+                        "videoId": "850667",
+                        "order": "1",
+                        "href": "/video/850667"
+                    },
+                    {
+                        "videoId": "52448",
+                        "order": "2",
+                        "href": "/video/52448"
+                    },
+                    {
+                        "videoId": "101479",
+                        "order": "3",
+                        "href": "/video/101479"
+                    },
+                    {
+                        "videoId": "623257",
+                        "order": "4",
+                        "href": "/video/623257"
+                    },
+                    {
+                        "videoId": "793914",
+                        "order": "5",
+                        "href": "/video/793914"
+                    }
+                ]
+            }
+        }
