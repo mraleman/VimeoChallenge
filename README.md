@@ -1,11 +1,10 @@
-# VimeoChallenge RESTful API v0.9
+# VimeoChallenge RESTful API v1.0
 This is a simple API that includes a datadump of a million records. The API has several endpoints that allow access to data by using various Request Methods(GET, POST, PUSH, DELETE). 
-Please follow the installation Instructions Below.
+A live working version of this API can be found at [http://www.nivrama.com/api](http://www.nivrama.com/api). 
+
+Please follow the installation Instructions Below to get this API up and running.
 
 Requirements: PHP 7, MySQL, Apache Server
-
-  * Added Composer psr-4 Autoload 
-  * Cleaned up code
 
 ## INSTALLATION INSTRUCTIONS
 ------------------------------------------------------------------------------
