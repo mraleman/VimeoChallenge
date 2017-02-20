@@ -40,9 +40,9 @@ Requirements: PHP 7, MySQL, Apache Server
 7. ###Modify apache2.conf
   - Modify the following: 
     `<Directory />` 
-        Options All 
+        ```Options All 
         AllowOverride All 
-        Require all denied 
+        Require all denied``` 
     `</Directory>` 
  
     `<Directory /usr/share>` 
