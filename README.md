@@ -39,22 +39,22 @@ Requirements: PHP 7, MySQL, Apache Server
 
 7. ###Modify apache2.conf
   - Modify the following: 
-`<Directory />` 
+`<Directory /> 
 	Options All 
 	AllowOverride All 
 	Require all denied 
-`</Directory>` 
+</Directory> 
  
-`<Directory /usr/share>` 
+<Directory /usr/share> 
 	AllowOverride None 
 	Require all granted 
-`</Directory>` 
+</Directory> 
  
-`<Directory /var/www/>` 
+<Directory /var/www/> 
 	Options Indexes FollowSymLinks 
 	AllowOverride All 
 	Require all granted 
-`</Directory>` 
+</Directory>` 
  
 8. ###Restart Apache Server
   - sudo service apache2 restart
