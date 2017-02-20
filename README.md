@@ -45,12 +45,12 @@ Requirements: PHP 7, MySQL, Apache Server
     Require all denied
 </Directory>
 
-<Directory /usr/share>
+<Directory /usr/share />
     AllowOverride None 
     Require all granted 
 </Directory> 
  
-<Directory /var/www/> 
+<Directory /var/www /> 
     Options Indexes FollowSymLinks 
     AllowOverride All 
     Require all granted 
