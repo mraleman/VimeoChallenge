@@ -143,13 +143,15 @@ class UserModel extends BaseTemplate
                         .'  CASE WHEN vll.vll_id IS NOT NULL '
                         .'       THEN 1 ELSE 0 END AS liked,'
                         .'  vll.like_date '
-                        .'FROM users u, videos_watch_log vwl '
+                        .'FROM users u '
+                        .'LEFT JOIN videos_watch_log vwl '
+                        .'  ON u.user_id = vwl.user_id '
                         .'LEFT JOIN videos_likes_log vll '
                         .'  ON ('
                         .'      vll.video_id = vwl.video_id '
                         .'      AND vll.user_id = vwl.user_id'
                         .'  ) '
-                        .'WHERE u.user_id = vwl.user_id AND vwl.user_id = :id '
+                        .'WHERE u.user_id = :id '
                         .'ORDER BY vwl.watch_date DESC LIMIT 0,'.$limit;
 
             $rslt = $this->getResults($sqlStmnt,[':id'=>$id]);
@@ -209,8 +211,10 @@ class UserModel extends BaseTemplate
     {
         if ($this->_response['status']) {
             $sqlStmnt = 'SELECT u.user_id uid, u.total_liked, vll.* '
-                        .'FROM users u, videos_likes_log vll '
-                        .'WHERE u.user_id = vll.user_id AND vll.user_id = :id '
+                        .'FROM users u '
+                        .'LEFT JOIN videos_likes_log vll '
+                        .'  ON u.user_id = vll.user_id '
+                        .'WHERE u.user_id = :id '
                         .'ORDER BY vll.like_date DESC LIMIT 0,'.$limit;
 
             $rslt = $this->getResults($sqlStmnt,[':id'=>$id]);
