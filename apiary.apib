@@ -1,16 +1,19 @@
 FORMAT: 1A
-HOST: http://52.39.160.239/api/ 
+HOST: http://www.nivrama.com/api/ 
 
 # Vimeo Challenge RESTful API
 
-This API allows the client to get some data from a database with approximately 1,000,000 records. The API offer endpoints for USERS, VIDEOS, COUNTRY and POPULAR.  
+This API allows the client to get some data from a database with approximately 1,000,000 records. 
+The API offers endpoints for **USER**, **VIDEO**, **COUNTRY** and **POPULAR** methods using
+`GET`,`POST`,`PUSH` and `DELETE` Request Methods. 
 **Please Note:** This API is inclomplete. Some endpoints do not exist but were not required as part of the challenge.  
 
+**Live Testing Server** `http://www.nivrama.com/api/`  
 **Authorization Type:** `NO AUTH`  
 **HEADERS SET:** `Content-Type application/json`
 
 ## User - Create New User [/user]
-Simple User Api that provides several
+Simple User API that provides several methods to get user info, delete a user and create a new user.
 
 ### Create User[POST]
 Creates new User.  
@@ -55,8 +58,8 @@ Creates new User.
             }
         }
 
-## User - Various Methods [/user/{user_id}]
-Several methods for the User.
+## User - Various GET Methods [/user/{user_id}]
+Several GET methods for the User.
 
 ### Get User Profile[GET]
 Get the User's Profile.  
