@@ -39,24 +39,23 @@ Requirements: PHP 7, MySQL, Apache Server
 7. ###Modify apache2.conf
   - Modify the following: 
 ```xml
-<Directory />
-    Options All 
-    AllowOverride All 
-    Require all denied
-</Directory>
-
-<Directory /usr/share>
-    AllowOverride None 
-    Require all granted 
-</Directory> 
- 
-<Directory /var/www/> 
-    Options Indexes FollowSymLinks 
-    AllowOverride All 
-    Require all granted 
-</Directory>
+    <Directory />
+        Options All
+        AllowOverride All
+        Require all denied
+    </Directory>
+    <Directory /usr/share />
+        AllowOverride None
+        Require all granted
+    </Directory>
+    <Directory /var/www />
+        Options Indexes FollowSymLinks
+        AllowOverride All
+        Require all granted
+    </Directory>
 ```
-8. ###Restart Apache Server
-  - sudo service apache2 restart
+
+###Restart Apache Server
+- sudo service apache2 restart
 
 Go to [http://docs.vimeochallengeapi.apiary.io](http://docs.vimeochallengeapi.apiary.io) and read documentation on the available endpoints.  You can also test the API with a mock server. I also used POSTMAN to test the api’s locally
