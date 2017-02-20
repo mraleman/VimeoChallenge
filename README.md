@@ -57,6 +57,6 @@ Requirements: PHP 7, MySQL, Apache Server
 </Directory>
 ```
 8. ###Restart Apache Server
-  - sudo service apache2 restart
+  - sudo service apache2 restart 
 
 Go to [http://docs.vimeochallengeapi.apiary.io](http://docs.vimeochallengeapi.apiary.io) and read documentation on the available endpoints.  You can also test the API with a mock server. I also used POSTMAN to test the api’s locally
