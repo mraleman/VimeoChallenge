@@ -56,7 +56,6 @@ Requirements: PHP 7, MySQL, Apache Server
     Require all granted 
 </Directory>
 ```
-
 8. ###Restart Apache Server
   - sudo service apache2 restart
 
