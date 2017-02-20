@@ -11,7 +11,7 @@ class CountryModel extends BaseTemplate
     /**
      * Connect with Database and establish a DB Handler to use
      */
-    final public function __construct(
+    final public function __construct()
     {
         //lets start by connecting to the db
         $conn = new Database;

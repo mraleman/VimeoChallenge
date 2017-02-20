@@ -83,7 +83,7 @@ class Bootstrap
             $response = $controller->getResponse();
 
         } else {
-            $response = ['status'=>false,'reason'=>'Invalid Request a'];
+            $response = ['status'=>false,'reason'=>'Invalid Request'];
         }
 
         /**

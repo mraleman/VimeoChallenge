@@ -1,8 +1,8 @@
 <?php
-ini_set('display_errors',1);
-error_reporting(E_ALL & ~E_DEPRECATED & ~E_STRICT);
+//ini_set('display_errors',1);
+//error_reporting(E_ALL & ~E_DEPRECATED & ~E_STRICT);
 //define JSON Header
-//header('Content-Type: application/json');
+header('Content-Type: application/json');
 
 use Vimeochallenge\Source as API;
 

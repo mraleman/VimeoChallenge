@@ -18,5 +18,8 @@ const DUMPFILE = __DIR__.'/dumper/data.dump';
 const LINEBREAK = PHP_EOL.'------------------------------------------'.PHP_EOL;
 //Limit how many lines to process, leave as 0 to process all.
 const DUMP_READ = 0;
-//Set how many records should be inserted in the SQL INSERT.
-const DUMP_CHUNK = 1000;
+/**
+ * Set how many records should be inserted in the SQL INSERT.
+ * You should reduce this amount on slower a slower PC.
+ */
+const DUMP_CHUNK = 5000;
