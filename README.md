@@ -1,4 +1,4 @@
-# VimeoChallenge RESTful API v1.0
+# Sample RESTful API v1.0
 This is a simple API that includes a datadump of a million records. The API has several endpoints that allow access to data by using various Request Methods(GET, POST, PUSH, DELETE). 
 A live working version of this API can be found at [http://www.nivrama.com/api](http://www.nivrama.com/api). 
 
